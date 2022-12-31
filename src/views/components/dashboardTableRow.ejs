@@ -1,0 +1,35 @@
+<%
+if(items) {
+	var rows = '';
+	items.forEach(function (item) {
+		rows +=
+			'<tr>' +
+			'<td>' +
+			'<div class="form-check form-check-muted m-0">' +
+			'<label class="form-check-label">' +
+			'<input type="checkbox" class="form-check-input"/>' +
+			'<i class="input-helper">' +
+			'</i>' +
+			'</label>' +
+			'</div>' +
+			'</td>' +
+			'<td>' +
+			'<span class="pl-2">' + item.name + '</span>' +
+			'</td>' +
+			'<td>' +
+			'<span class="pl-2">' + item.identikey + '</span>' +
+			'</td>' +
+			'<td>' +
+			'<span class="pl-2">' + item.sport + '</span>' +
+			'</td>' +
+			'<td>' +
+			'<span class="pl-2">' + item.date + '</span>' +
+			'</td>' +
+			'<td>' +
+			'<span class="pl-2">' + item.smartCheckIn + '</span>' +
+			'</td>' +
+			'</tr>';
+	});
+%>
+<%- rows %>
+<% } %>

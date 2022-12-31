@@ -1,0 +1,32 @@
+generate the build folder:
+npm run build
+
+
+git push -u origin main
+
+
+REMEMBER TO REMOVE env BEFORE GOING PUBLIC
+
+
+/*###############################################  ###############################################*/
+
+
+
+JSDoc:
+/*
+*
+ * @param {req}
+ * @param {res}
+ * @param {next}
+ * @option | {data-type} | parameter-name | description
+ * @return-option | {data-type} | description
+ *
+ */
+
+
+
+For babel-node error:
+1: npm install @babel/node
+2: npm install @babel/cli
+3: npm install @babel/core
+4: npm start

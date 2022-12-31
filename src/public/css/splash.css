@@ -1,0 +1,93 @@
+/*############################################### SPLASH ###############################################*/
+.splash_title {
+	font-family: "Rubik Moonrocks", cursive;
+}
+
+
+.splash_subheading {
+	font-family: "Rubik", sans-serif;
+}
+
+
+.cu-icon {
+	background-image: url("../images/cu-icon.png");
+	height:           20px;
+	width:            20px;
+	display:          inline-block;
+	position:         relative;
+
+}
+
+.splash_background {
+	background-image:    url("../images/background.jpg");
+	background-size:     cover;
+	background-position: center;
+	height:              100vh;
+}
+
+
+.splash_overlay {
+	height:           inherit;
+	background-color: rgba(43, 43, 43, 0.8); /* Tint */
+	display:          flex;
+	flex-direction:   column;
+	align-items:      center;
+	justify-content:  center;
+	position:         relative;
+	color:            white;
+}
+
+
+.splash_content {
+	position:   absolute;
+	text-align: center;
+}
+
+
+.splash_Links {
+	margin-top:     130px;
+	display:        flex;
+	flex-direction: column;
+	align-items:    center;
+}
+
+
+.splash_Links span {
+	margin:      20px;
+	font-weight: 150;
+	font-size:   16px;
+	position:    relative;
+}
+
+
+.splash_Links span::before {
+	content:          " ";
+	height:           1px;
+	width:            40px;
+	background-color: white;
+	position:         absolute;
+	left:             -40px;
+	bottom:           2px;
+}
+
+
+.splash_Links span::after {
+	content:          " ";
+	height:           1px;
+	width:            40px;
+	background-color: white;
+	position:         absolute;
+	right:            -40px;
+	bottom:           2px;
+}
+
+
+.splash_Links a {
+	margin: 0;
+}
+
+
+.splash_subheading {
+	font-size:  16px;
+	text-align: center;
+}

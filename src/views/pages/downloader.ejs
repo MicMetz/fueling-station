@@ -1,0 +1,77 @@
+<% layout('layouts/baseplate') %>
+<%- include('../partials/navigation') -%>
+<main class = "col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+	<div id = "downloader-content">                      <!--###############DASHBOARD SPECIFIC -START-###############-->
+		<div class = "main-panel">
+
+			<div class = "p-card">
+				<div class = "p-card-body">
+					<form action = "/downloader/filter" method = "get" class = "form-inline">
+						<div class = "form-group">
+							<select required id = "input-sport" class = "mx-3 form-control" name = "sport" style = "width: 200px;">
+								<option selected value = ''>Sport</option>
+								<option value = "M Distance">M Distance</option>
+								<option value = "M Football">M Football</option>
+								<option value = "M Golf">M Golf</option>
+								<option value = "M Jump">M Jump</option>
+								<option value = "M Multi">M Multi</option>
+								<option value = "M Ski">M Ski</option>
+								<option value = "M Sprint">M Sprint</option>
+								<option value = "M Throw">M Throw</option>
+								<option value = "M Track">M Track</option>
+								<option value = "W Basketball">F Basketball</option>
+								<option value = "W Distance">F Distance</option>
+								<option value = "W Golf">F Golf</option>
+								<option value = "W Jump">F Jump</option>
+								<option value = "W Lacrosse">F Lacrosse</option>
+								<option value = "W Multi">F Multi</option>
+								<option value = "W Ski">F Ski</option>
+								<option value = "W Sprint">F Sprint</option>
+								<option value = "W Tennis">F Tennis</option>
+								<option value = "W Throw">F Throw</option>
+								<option value = "W Track">F Track</option>
+								<option value = "W Volleyball">F Volleyball</option>
+							</select>
+						</div>
+						<div class = "form-group">
+							<input required type = "date" name = "startDate" class = "mx-3 form-control" style = "width: 200px;">
+							<input required type = "date" name = "endDate" class = "mx-3 form-control" style = "width: 200px;">
+						</div>
+						<div class = "form-group">
+							<button type = "submit" class = "btn btn-primary">Filter</button>
+						</div>
+					</form>
+					<form action="/downloader/download">
+						<button type = "submit" class = "btn btn-success">Export</button>
+					</form>
+					<hr style = "background-color: white;"/>
+					<h1 class = "p-card-title my-3">Athletes</h1>
+					<div class = "table-responsive">
+						<table class = "table">
+							<thead>
+							<tr>
+								<th>
+									<div class = "form-check form-check-muted m-0">
+										<label class = "form-check-label">
+											<input type = "checkbox" class = "form-check-input"/>
+											<i class = "input-helper"></i>
+										</label>
+									</div>
+								</th>
+								<th> Athlete Name</th>
+								<th> IdentiKey</th>
+								<th> Sport</th>
+								<th> Check In</th>
+								<th> Status</th>
+							</tr>
+							</thead>
+							<tbody>
+							<%- include('../components/dashboardTableRow', {items: items}); %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

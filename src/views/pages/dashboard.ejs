@@ -1,0 +1,134 @@
+<% layout('layouts/baseplate') %>
+<%- include('../partials/navigation') -%>
+<main class = "col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+    <div id = "dash-content">                      <!--###############DASHBOARD SPECIFIC -START-###############-->
+        <div class = "main-panel">                      <!--###############MAIN PANEL -START-###############-->
+                                                        <!--###############SIDEBAR MOVED TO NAVIGATION###############-->
+            <div class = "row ">                        <!--###############ROW1 -START-###############-->
+                <div class = "col-md-12">
+                    <div class = "p-card ">
+                        <div class = "card-header ">
+                            <h1>Welcome!</h1>
+                            <h3>Checkins Today: <span><%= totalCount %></span></h3>
+                        </div>
+                        <div class = "p-card-body ">
+                            <canvas id = "" width = "400" height = "100"></canvas>
+                        </div>
+                        <div class = "card-footer ">
+                            <hr>
+                            <div class = "update">
+                                <button class = "btn btn-outline-success my-2 my-sm-0 my-sm-0" onclick = ""><i class = "fa fa-history"></i> Updated <span><%- timeUpdate %></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class = "row ">                        <!--###############ROW2 -START-###############-->
+                <div class = "col-12 grid-margin">
+                    <div class = "p-card">
+                        <div class = "p-card-body">
+                            <!--							<h4 class = "p-card-title">Athletes</h4>-->
+                            <!--                            <h1>Welcome!</h1>-->
+                            <!--                            <h3>Checkins Today: 10</h3>-->
+                            <div class = "table-responsive">
+                                <table class = "table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th> Selected</th>
+                                        <th> Athlete Name</th>
+                                        <th> IdentiKey</th>
+                                        <th> Sport</th>
+                                        <th> Check In</th>
+                                        <th> Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%- include('../components/dashboardTableRow', {items: items}); %>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                  <!--###############ROW2 -END-###############-->
+
+
+                                                        <!--
+                                                                    <div class = "row">                     &lt;!&ndash;###############ROW3 -START-###############&ndash;&gt;
+                                                                        <div class = "col-md-6 col-xl-4 grid-margin stretch-p-card">
+                                                                            <div class = "p-card">
+                                                                                <div class = "p-card-body">
+                                                                                    <div class = "d-flex flex-row justify-content-between">
+                                                                                        <h4 class = "p-card-title">Messages</h4>
+                                                                                        <p class = "text-muted mb-1 small">View all</p>
+                                                                                    </div>
+                                                                                    <div class = "preview-list">
+                                                                                        <div class = "preview-item border-bottom">
+                                                                                            <div class = "preview-thumbnail">
+                                                                                                <img src = '/images/faces/testcat.png' alt = "face" class = "rounded-circle"/>
+                                                                                            </div>
+                                                                                            <div class = "preview-item-content d-flex flex-grow">
+                                                                                                <div class = "flex-grow">
+                                                                                                    <div class = "d-flex d-md-block d-xl-flex justify-content-between">
+                                                                                                        <h6 class = "prev-subject">Yuhurd</h6>
+                                                                                                        <p class = "text-muted text-small">8 minutes ago</p>
+                                                                                                    </div>
+                                                                                                    <p class = "text-muted">Feed me!</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class = "preview-item border-bottom">
+                                                                                            <div class = "preview-thumbnail">
+                                                                                                <img src = '/images/faces-clipart/pic-2.png' alt = "face" class = "rounded-circle"/>
+                                                                                            </div>
+                                                                                            <div class = "preview-item-content d-flex flex-grow">
+                                                                                                <div class = "flex-grow">
+                                                                                                    <div class = "d-flex d-md-block d-xl-flex justify-content-between">
+                                                                                                        <h6 class = "prev-subject">Beethan Loose</h6>
+                                                                                                        <p class = "text-muted text-small">10 Minutes Ago</p>
+                                                                                                    </div>
+                                                                                                    <p class = "text-muted">Yup.</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class = "preview-item border-bottom">
+                                                                                            <div class = "preview-thumbnail">
+                                                                                                <img src = '/images/faces-clipart/pic-3.png' alt = "face" class = "rounded-circle"/>
+                                                                                            </div>
+                                                                                            <div class = "preview-item-content d-flex flex-grow">
+                                                                                                <div class = "flex-grow">
+                                                                                                    <div class = "d-flex d-md-block d-xl-flex justify-content-between">
+                                                                                                        <h6 class = "prev-subject">Helie Kelly</h6>
+                                                                                                        <p class = "text-muted text-small">3 Hours Ago</p>
+                                                                                                    </div>
+                                                                                                    <p class = "text-muted">No.</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class = "preview-item border-bottom">
+                                                                                            <div class = "preview-thumbnail">
+                                                                                                <img src = '/images/faces-clipart/pic-4.png' alt = "face" class = "rounded-circle"/>
+                                                                                            </div>
+                                                                                            <div class = "preview-item-content d-flex flex-grow">
+                                                                                                <div class = "flex-grow">
+                                                                                                    <div class = "d-flex d-md-block d-xl-flex justify-content-between">
+                                                                                                        <h6 class = "prev-subject">Herman Caine</h6>
+                                                                                                        <p class = "text-muted text-small">4 Hours Ago</p>
+                                                                                                    </div>
+                                                                                                    <p class = "text-muted">Still alive.</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>       &lt;!&ndash;###############ROW3 -END-###############&ndash;&gt;
+                                                        -->
+        </div>           <!--###############MAIN ROW -END-###############-->
+    </div>           <!--###############DASHBOARD SPECIFIC -END-###############-->
+</main>              <!--###############MAIN PANEL -END-###############&ndash;&gt;-->
